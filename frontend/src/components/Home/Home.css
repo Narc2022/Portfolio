@@ -57,6 +57,7 @@
 	position:absolute;
   width:inherit;
   height: inherit;
+  opacity:0.7;
 }
 
 .homeCubeSkillsFaces > img{
@@ -65,7 +66,7 @@
 }
 
 .homeCubeSkillsFace1 {
-  transform: translate3d(0, 0, 150px);
+  transform: translate3d(0, 0, 100px);
 }
 .homeCubeSkillsFace2 {
   transform: rotateY(180deg) translate3d(0, 0, 150px);
