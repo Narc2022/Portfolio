@@ -92,7 +92,7 @@
 
 .cubeShadow{
   width: 300px;
-  height:40px;
+  height:20px;
   background-color: rgba(255,255,255,0.171);
   border-radius: 50%;
   animation: cubeShadow 1s ease-in-out infinite alternate;
