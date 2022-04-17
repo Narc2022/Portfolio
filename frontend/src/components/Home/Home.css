@@ -43,8 +43,8 @@
   }
 
 .homeCubeSkills{
-	width:300px;
-	height:300px;
+	width:200px;
+	height:200px;
   animation: cubeRotation 15s linear infinite;
   transform-style: preserve-3d;
 }
@@ -66,7 +66,7 @@
 }
 
 .homeCubeSkillsFace1 {
-  transform: translate3d(0, 0, 100px);
+  transform: translate3d(0, 0, 150px);
 }
 .homeCubeSkillsFace2 {
   transform: rotateY(180deg) translate3d(0, 0, 150px);
@@ -87,5 +87,25 @@
 @keyframes cubeRotation{
   to{
     transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
+  }
+}
+
+.cubeShadow{
+  width: 300px;
+  height:40px;
+  background-color: rgba(255,255,255,0.171);
+  border-radius: 50%;
+  animation: cubeShadow 1s ease-in-out infinite alternate;
+}
+
+@keyframes cubeShadow{
+    to{
+      transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);;
+    }
+}
+
+@keyframes cubeShadow{
+  to{
+    transform: rotateY(-10px);
   }
 }

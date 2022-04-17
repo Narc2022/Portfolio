@@ -146,7 +146,9 @@ const Home = () => {
               alt="Face6"/>
             </div>
           </div>
-
+          <div className="cubeShadow">
+            
+          </div>
       </div>
     </div>
   );
