@@ -18,6 +18,7 @@ import {
   SiHtml5,
   SiThreedotjs,
 } from "react-icons/si";
+import YoutubeCard from '../YoutubeCard/YoutubeCard';
 const Home = () => {
   useEffect(()=>{
   const textureLoader =  new THREE.TextureLoader();
@@ -172,6 +173,14 @@ const Home = () => {
       </div>
       <div className="homeYoutube">
         <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
+        <div className="homeYoutubeWrapper">
+          <YoutubeCard />
+          <YoutubeCard />
+          <YoutubeCard />
+          <YoutubeCard />
+          <YoutubeCard />
+          <YoutubeCard />
+        </div>
       </div>
     </div>
   );
