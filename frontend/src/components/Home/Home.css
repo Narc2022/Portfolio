@@ -96,6 +96,7 @@
   background-color: rgba(255,255,255,0.171);
   border-radius: 50%;
   animation: cubeShadow 1s ease-in-out infinite alternate;
+  filter:blur(3px);
 }
 
 @keyframes cubeShadow{

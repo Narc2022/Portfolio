@@ -7,7 +7,17 @@ import spaceImage from '../../Images/space.jpg';
 import {Typography} from "@mui/material"
 import TimeLine from '../TimeLine/TimeLine';
 import cubeFace1 from '../../Images/bootstrap.jpeg'
-
+import {
+  SiCplusplus,
+  SiReact,
+  SiJavascript,
+  SiMongodb,
+  SiNodedotjs,
+  SiExpress,
+  SiCss3,
+  SiHtml5,
+  SiThreedotjs,
+} from "react-icons/si";
 const Home = () => {
   useEffect(()=>{
   const textureLoader =  new THREE.TextureLoader();
@@ -147,7 +157,17 @@ const Home = () => {
             </div>
           </div>
           <div className="cubeShadow">
-            
+          </div>
+          <div className="homeSkillsBox">
+            <SiCplusplus />
+            <SiReact />
+            <SiJavascript />
+            <SiMongodb />
+            <SiNodedotjs />
+            <SiExpress />
+            <SiCss3 />
+            <SiHtml5 />
+            <SiThreedotjs />
           </div>
       </div>
     </div>
