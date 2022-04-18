@@ -84,6 +84,7 @@
   transform: rotateX(-90deg) translate3d(0, 0, 150px);
 }
 
+
 @keyframes cubeRotation{
   to{
     transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
@@ -99,6 +100,30 @@
   filter:blur(3px);
 }
 
+.homeskillsBox{
+  background-color: hsl(250,100%,75%);
+  padding:0.2max;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right:-300px;
+  /* animation: homskillsBoxAnimationOn 1s linear forwards; */
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.homeskillsBox > svg{
+  font-size: 5vmax;
+  color: rgb(255,255,255);
+  transition: all 0.5s;
+  margin: 10px;
+}
+
+.homeskillsBox>svg:hover{
+  transform: scale(1.5);
+}
+
 @keyframes cubeShadow{
     to{
       transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);;
@@ -109,4 +134,25 @@
   to{
     transform: rotateY(-10px);
   }
+}
+
+@keyframes homskillsBoxAnimationOn {
+    from{
+      right:-300px;
+    }
+
+    to{
+       right:40px;
+    }  
+
+}
+
+@keyframes homskillsBoxAnimationOff {
+  from{
+    right:40px;
+  }
+
+  to{
+     right:-300px;
+  }   
 }
