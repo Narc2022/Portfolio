@@ -158,7 +158,7 @@ const Home = () => {
           </div>
           <div className="cubeShadow">
           </div>
-          <div className="homeSkillsBox">
+          <div className="homeskillsBox">
             <SiCplusplus />
             <SiReact />
             <SiJavascript />
@@ -169,6 +169,9 @@ const Home = () => {
             <SiHtml5 />
             <SiThreedotjs />
           </div>
+      </div>
+      <div className="homeYoutube">
+        <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
       </div>
     </div>
   );
