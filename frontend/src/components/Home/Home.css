@@ -140,6 +140,17 @@
   color:rgba(22,20,20,0.904);
   padding: 4vmax;
 }
+
+.homeYoutubeWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2vmax;
+  width: 80%;
+  margin: auto;
+}
+
+
 @keyframes cubeShadow{
     to{
       transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);;
