@@ -21,3 +21,13 @@
 	transform: scale(1.1);
 	box-shadow: 0 0 10px rgba(0,0,0,0.329);
 }
+
+
+@media screen and (max-width: 600px){
+	.youtubeCard{
+	 width: 200px;
+	}
+    .youtubeCard img{
+	 width: 200px;
+    }
+}

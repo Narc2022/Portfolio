@@ -177,6 +177,18 @@ const Home = () => {
           <YoutubeCard 
            image="https://picsum.photos/300/200.jpg"
            title="Sample Video"/>
+           <YoutubeCard 
+           image="https://picsum.photos/300/200.jpg"
+           title="Sample Video"/>
+           <YoutubeCard 
+           image="https://picsum.photos/300/200.jpg"
+           title="Sample Video"/>
+           <YoutubeCard 
+           image="https://picsum.photos/300/200.jpg"
+           title="Sample Video"/>
+           <YoutubeCard 
+           image="https://picsum.photos/300/200.jpg"
+           title="Sample Video"/>
         </div>
       </div>
     </div>
