@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg';
 import venusImage from '../../Images/venus.jpg';
 import spaceImage from '../../Images/space.jpg';
-import {Typography} from "@mui/material"
+import {Typography} from "@mui/material";
 import TimeLine from '../TimeLine/TimeLine';
 import cubeFace1 from '../../Images/bootstrap.jpeg'
 import {
@@ -174,12 +174,9 @@ const Home = () => {
       <div className="homeYoutube">
         <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
         <div className="homeYoutubeWrapper">
-          <YoutubeCard />
-          <YoutubeCard />
-          <YoutubeCard />
-          <YoutubeCard />
-          <YoutubeCard />
-          <YoutubeCard />
+          <YoutubeCard 
+           image="https://picsum.photos/300/200.jpg"
+           title="Sample Video"/>
         </div>
       </div>
     </div>
