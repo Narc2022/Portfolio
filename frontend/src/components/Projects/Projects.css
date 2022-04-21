@@ -50,6 +50,15 @@
     animation: projectCardAnimationEven 1s ease-in-out forwards 0.5s;
 }
 
+.projectCard > div {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s;
+    justify-content: space-around;
+}
 @keyframes projectCardAnimation {
     to{
         transform:translateX(0);
@@ -59,5 +68,11 @@
 @keyframes projectCardAnimationEven {
     to{
         transform:translateX(0);
+    }
+}
+
+@keyframes projectHeadingAnimation {
+    to {
+        transform: translate(-50%,-50%);
     }
 }
