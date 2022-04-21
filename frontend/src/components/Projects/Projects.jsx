@@ -3,6 +3,7 @@ import React from 'react';
 import "./Projects.css";
 import {AiOutlineProject} from 'react-icons/ai'
 import { Delete } from '@mui/icons-material';
+import { FaRegSmileWink } from 'react-icons/fa';
 
 const ProjectCard = ({
   url,
@@ -24,7 +25,6 @@ const ProjectCard = ({
       <Typography>{description}</Typography>
         <Typography variant='h6'>Tech Stack:{technologies}</Typography>
       </div>
-      
     </a>
     {isAdmin && (
       <Button style={{color:"rgba(40,40,40,0.7)"}}>
@@ -49,10 +49,13 @@ const Projects = () => {
              projectImage="https://picsum.photos/300/200/?blur=2"
              projectTitle="Sample Project"
              description="This is sample project"
-             technologies="Mern Stack"
+             technologies="MongoDB, Express Js, React Js, Node Js"
           />
         ))}
       </div>
+      <Typography variant='h3' style={{font:"100 1.2rem 'Ubuntu Mono'"}}>
+        All The Projects Shown Above Are Made By Me < FaRegSmileWink />
+      </Typography>
     </div>
 }
 
