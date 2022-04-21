@@ -8,9 +8,7 @@ const Footer = () => {
 		<div className="footer">
 		<div>
 			<Typography variant="h5">About Me</Typography>
-			<Typography>
-				Hey, my name is Sachin Singh.I am a Full-Stack Developer and a tutorial on Youtube channel called <br>naRc Tech</br> 
-			</Typography>
+            <Typography>Hey, my name is Sachin Singh.I am a Full-Stack Developer and a tutorial on Youtube channel called <b>naRc Tech</b></Typography>
 
 			<Link to="/contact" className="footerContactBtn">
 			<Typography>Contact Us</Typography>
@@ -32,7 +30,7 @@ const Footer = () => {
 			</a>
 		</div>
 		</div>
-	);
+	)
 }
 
 export default Footer;

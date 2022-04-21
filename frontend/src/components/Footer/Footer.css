@@ -1,0 +1,13 @@
+.footer{
+    background-color: rgb(26,26,26);
+    padding: 3vmax;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+}
+.footer > div > h5{
+    color: white;
+    border-bottom: 1px solid white;
+    width:120px;
+    padding:10px 0;
+    margin-bottom: 20px;
+}
