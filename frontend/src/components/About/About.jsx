@@ -12,9 +12,19 @@ const About = () => {
         <div className="aboutContainer2">
             <div>
                 <img src={ProfileImage} alt="Sachin" className='aboutAvatar' />
-                <Typography variant='h4'>Sachin</Typography>
-                <Typography>Full Stack Developer</Typography>
-                <Typography>I am also a teacher and currier guide</Typography>
+                <Typography variant='h4' style={{
+                    margin:"1vmax 0",
+                    color:"black"
+                }}>Sachin</Typography>
+
+                <Typography style={{
+                    margin:"1vmax 0"
+                }}>Full Stack Developer</Typography>
+                
+                <Typography
+                style={{
+                    margin:"1vmax 0"}}
+                >I am also a teacher and currier guide</Typography>
             </div>
             <div>
                 <Typography style={{
