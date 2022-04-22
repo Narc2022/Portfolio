@@ -18,7 +18,6 @@
     background-color: white;
     position: absolute;
     border-radius: 100px 0 0 100px;
-    transform: translateX(20%) translateY(-50%);
     top:50%;
     box-shadow: 0 0 10px rgba(0,0,0,0.473);
     display: flex;
@@ -78,18 +77,12 @@
 }
 
 @keyframes contactFormBtn{
-    from { 
-        transform: translateY(-100vh);
-    }
     to {
         transform: translateY(0);
     }
 }
-
 @keyframes contactFormInputs{
-    from { 
-        transform: translateY(-100vw);
-    }
+    
     to {
         transform: translateY(0);
     }

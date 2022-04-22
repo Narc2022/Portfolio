@@ -18,11 +18,13 @@ const Contact = () => {
           <Typography variant='h4'>Contact Us</Typography>
           <input type="text" 
           placeholder='Name'
+          required
           value={name}
           onChange={(e) => setName(e.target.value)}
           />
           <input type="email" 
           placeholder='Email'
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           />
@@ -31,6 +33,7 @@ const Contact = () => {
           cols="30" 
           rows="10"
           value={message}
+          required
           onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <Button variant='contained' type='submit'>Send</Button>
