@@ -93,12 +93,17 @@ export const myProfile = async(req,res)=>{
 
 export const contact = async(req,res)=>{
     try {
-        const user = await User.findById(req.user._id);
+        const {name,email,message} = req.body;
 
-        res.status(200).json({
+        const userMessage = `Hey, I an ${name} . My email is ${email}. My message is ${message}`;
+
+        await sendMail(userMessage);
+
+        return res.status(200).json({
             success:true,
-            user,
+            message:"Message Sent Successfully"
         })
+
     } catch (error) {
     return res.status(400).json({
         success:false,
