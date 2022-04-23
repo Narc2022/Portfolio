@@ -1,0 +1,3 @@
+MONGO_URI="mongodb+srv://narc2022:narc2022@cluster0.uvulp.mongodb.net/Cluster0
+VERSION
+?retryWrites=true&w=majority"
