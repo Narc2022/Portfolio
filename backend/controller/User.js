@@ -1,5 +1,6 @@
 import { User } from "../model/User.js";
 import jwt from 'jsonwebtoken';
+import { sendMail } from "../middlewares/sendMail.js";
 export const login = async(req,res)=>{
     try{
         const{email,password} = req.body;
@@ -49,12 +50,12 @@ export const logout = async(req,res)=>{
         .json({
             success:true,
             message:"Logged Out Successfully"
-        });
+        });7
     }catch(error){ 
         return res.status(400).json({
             success:false,
             message:error.message,
-        });
+        }); 
     }
 };
 
@@ -111,3 +112,34 @@ export const contact = async(req,res)=>{
     });
 }
 };
+
+export const updateUser = async(req,res)=>{
+    try {
+        const user = await User.findById(req.user._id);
+
+        res.status(200).json({
+            success:true,
+            user,
+        })
+    } catch (error) {
+    return res.status(400).json({
+        success:false,
+        message:error.message,
+    });
+}
+};
+// export const myProfile = async(req,res)=>{
+//     try {
+//         const user = await User.findById(req.user._id);
+
+//         res.status(200).json({
+//             success:true,
+//             user,
+//         })
+//     } catch (error) {
+//     return res.status(400).json({
+//         success:false,
+//         message:error.message,
+//     });
+// }
+// };
