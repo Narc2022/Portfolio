@@ -7,7 +7,7 @@ userRouter.route("/login").post(login);
 
 userRouter.route("/logout").get(logout);
 
-userRouter.route("/user").get(getUser);
+userRouter.route("/me").get(getUser);
 
 userRouter.route("/me").get( isAuthenticated,myProfile );
 
