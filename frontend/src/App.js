@@ -9,12 +9,13 @@ import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Login from './components/Login/Login';
 import { useDispatch} from "react-redux";
-import {getUser} from "./action/user"
+import {getUser, loadUser} from "./action/user"
 function App() {
 
-  const dispatch=useDispatch
+  const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(getUser());
+    dispatch(loadUser());
   },[dispatch])
   return (
   <Router>
