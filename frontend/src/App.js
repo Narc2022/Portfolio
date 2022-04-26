@@ -15,7 +15,7 @@ function App() {
 
   const dispatch = useDispatch();
   const {isAuthenticated} = useSelector((state) => state.login );
-  const { loading } = useSelector((state) => state.user );
+  const { loading} = useSelector((state) => state.user );
 
 
 
@@ -34,12 +34,13 @@ function App() {
       <Route path="/about" element={<About />}/>
       <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/account" element={isAuthenticated ? <AdminPanel /> : <Login />} />
+      <Route path="/account"
+      element={ isAuthenticated ? <AdminPanel /> : <Login />}/>
     </Routes>
     <Footer />
     </>
-      
-      )
+    
+    )
     }
   </Router>
   );
