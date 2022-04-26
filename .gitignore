@@ -24,4 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 *.md
 *.md
-node_modules/.bin/acorn
+node_modules
+
