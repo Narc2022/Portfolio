@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material'
 import React from 'react'
+import "./AdminPanel.css"
 
 const AdminPanel = () => {
   return (
@@ -18,9 +19,25 @@ const AdminPanel = () => {
                     <p>E</p>
                     <p>L</p>
                 </Typography>
-                {/* <form onSubmit={submitHandler}> */}
+                <form onSubmit={submitHandler}>
+                    <input type="name" 
+                    placeholder='Name'
+                    onChange={(e)=>setName(e.target.value)}
+                    />
+                    <input type="email" 
+                    placeholder='Email' 
+                    value={email}
+                    onChange={(e)=>setEmail(e.target.value)}
+                    />
+                    <input type="password" 
+                    placeholder='Password' 
+                    value={password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    />
+                    <div className="adminPanelSkill">
 
-                {/* </form> */}
+                    </div>
+                </form>
         </div>
     </div>
   )
