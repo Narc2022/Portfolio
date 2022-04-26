@@ -15,7 +15,7 @@ const Login = () => {
     const submitHandler = (e) =>{
         e.preventDefault();
         dispatch(login(email,password));
-    }
+    };
 
     useEffect(() => {
       if(error){
@@ -24,7 +24,7 @@ const Login = () => {
       }
       else if(message){
         alert.success(message);
-        dispatch({type:"CLEAR_ERROR"});
+        dispatch({type:"CLEAR_MESSAGE"});
       }
     }, [alert,error,message,dispatch])
     

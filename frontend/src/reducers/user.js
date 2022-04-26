@@ -44,8 +44,9 @@ export const loginReducer = createReducer(
     },
     LOAD_USER_SUCCESS: (state, action) => {
       state.loading = false;
-      state.isAuthenticated = true;
       state.user = action.payload;
+      state.isAuthenticated = true;
+
     },
     LOAD_USER_FAILURE: (state, action) => {
       state.loading = false;
