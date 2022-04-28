@@ -19,7 +19,7 @@ import {
   SiThreedotjs,
 } from "react-icons/si";
 import YoutubeCard from '../YoutubeCard/YoutubeCard';
-const Home = () => {
+const Home = ({timelines,youtube,projects}) => {
   useEffect(()=>{
   const textureLoader =  new THREE.TextureLoader();
   const moonTexture = textureLoader.load(moonImage);
@@ -111,7 +111,7 @@ const Home = () => {
       <canvas className="homeCanvas"></canvas>
       <div className="homeContainer">
         <Typography variant='h3'>TIMELINE</Typography>
-        <TimeLine timelines={[1,2,3,4]} />
+        <TimeLine timelines={timelines} />
       </div>
       <div className="homeSkills">
         <Typography variant="h3">SKILLS</Typography>

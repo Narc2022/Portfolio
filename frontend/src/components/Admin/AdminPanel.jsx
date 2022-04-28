@@ -217,7 +217,7 @@ const AdminPanel = () => {
                     <Link to="/admin/youtube">
                       YOUTUBE<FaYoutube />
                     </Link>
-                    <Link to="/admin/timeline">
+                    <Link to="/admin/project">
                       PROJECTS<AiOutlineProject />
                     </Link>
                     <Button type="submit" variant="contained" disable={loading}>

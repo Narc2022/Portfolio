@@ -11,6 +11,10 @@ import Login from './components/Login/Login';
 import { useDispatch, useSelector} from "react-redux";
 import {getUser, loadUser} from "./action/user"
 import AdminPanel from './components/Admin/AdminPanel';
+import Timeline from './components/Admin/Timeline';
+import Youtube from "./components/Admin/Youtube";
+import Project from "./components/Admin/Project";
+// import Loader from "./components/Loader/Loader";
 function App() {
 
   const dispatch = useDispatch();
@@ -36,6 +40,12 @@ function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/account"
       element={ isAuthenticated ?<AdminPanel /> : <Login /> }/>
+    <Route path="/admin/timeline"
+      element={ isAuthenticated ?<Timeline /> : <Login /> }/>
+      <Route path="/admin/youtube"
+      element={ isAuthenticated ?<Youtube /> : <Login /> }/>
+    <Route path="/admin/project"
+      element={ isAuthenticated ?<Project /> : <Login /> }/>
     </Routes>
     <Footer />
     </>
