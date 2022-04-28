@@ -14,6 +14,7 @@ import AdminPanel from './components/Admin/AdminPanel';
 import Timeline from './components/Admin/Timeline';
 import Youtube from "./components/Admin/Youtube";
 import Project from "./components/Admin/Project";
+import Loader from './components/Loader/Loader';
 // import Loader from "./components/Loader/Loader";
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
   return (
   <Router>
     {
-      loading ?<div>Loading</div> :(
+      loading ?(<Loader />):(
     <>
     <Header />
     <Routes>
