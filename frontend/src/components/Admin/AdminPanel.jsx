@@ -28,11 +28,12 @@ const AdminPanel = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(updateUser(name,email,password,skills,about));
+    console.log(name,email,password,skills,about);
   };
 
   const logoutHandler = () => {
     dispatch(logout());
-  };
+  }
 
   const handleAboutImage = (e) => {
     const file =  e.target.files[0];
@@ -41,11 +42,11 @@ const AdminPanel = () => {
 
     Reader.onload = () =>{
       if(Reader.readyState===2){
-        setAbout(...about,{ avatar: Reader.result });      }
+        setAbout({ ...about, avatar: Reader.result });      }
     };
   };
 
-  const handleImages = (e,val) => {
+  const handleImages = (e ,val) => {
     const file =  e.target.files[0];
     const Reader = new FileReader();
     Reader.readAsDataURL(file);
@@ -53,22 +54,22 @@ const AdminPanel = () => {
     Reader.onload = () =>{
       if(Reader.readyState===2){
         if(val === 1){
-          setSkills(...skills,{ image1: Reader.result });
+          setSkills({...skills, image1: Reader.result });
         } 
         if(val === 2){
-          setSkills(...skills,{ image2: Reader.result });
+          setSkills({...skills, image2: Reader.result });
         } 
         if(val === 3){
-          setSkills(...skills,{ image3: Reader.result });
+          setSkills({...skills, image3: Reader.result });
         } 
         if(val === 4){
-          setSkills(...skills,{ image4: Reader.result });
+          setSkills({...skills, image4: Reader.result });
         } 
         if(val === 5){
-          setSkills(...skills,{ image5: Reader.result });
+          setSkills({...skills, image5: Reader.result });
         } 
         if(val === 6){
-          setSkills(...skills,{ image6: Reader.result });
+          setSkills({...skills, image6: Reader.result });
         }
       }
     };
@@ -79,11 +80,15 @@ const AdminPanel = () => {
         alert.error(error);
         dispatch({type:"CLEAR_ERRORS"});
     }
-    else if(message){
+    if(message){
       alert.success(message);
       dispatch({type:"CLEAR_MESSAGE"});
     }
-  }, [alert,error,message,dispatch])
+    if(loginMessage){
+      alert.success(loginMessage);
+      dispatch({type:"CLEAR_MESSAGE"});
+    }
+  }, [alert, error, message, dispatch, loginMessage])
     return (
     <div className="adminPanel">
         <div className="adminPanelContainer">
@@ -165,6 +170,12 @@ const AdminPanel = () => {
                     </div>
                     <div className="adminPanelAbout">
                       <fieldset>
+                      <input type="name" 
+                    placeholder='Name'
+                    onChange={(e)=>setAbout({...about, name:e.target.value})}
+                    className="adminPanelInputs"
+                    value={about.name}
+                    />
                       <input 
                         type="text"
                         placeholder='Title'
@@ -209,7 +220,7 @@ const AdminPanel = () => {
                     <Link to="/admin/timeline">
                       PROJECTS<AiOutlineProject />
                     </Link>
-                    <Button type="submit" variant="contained">
+                    <Button type="submit" variant="contained" disable={loading}>
                       Update
                     </Button>
                 </form> 

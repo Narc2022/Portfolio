@@ -97,7 +97,7 @@ export const updateUser = (name,email,password,skills,about) => async (dispatch)
       type: "UPDATE_USER_REQUEST",
     });
 
-    const { data } = await axios.post(
+    const { data } = await axios.put(
       "/api/v1/admin/update",
       {
         name,

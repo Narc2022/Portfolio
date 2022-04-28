@@ -93,5 +93,7 @@ export const updateReducer = createReducer({}, {
   },
   CLEAR_ERRORS: (state) => {
     state.error = null;
+  },CLEAR_MESSAGE: (state) => {
+    state.message = null;
   },
 });
