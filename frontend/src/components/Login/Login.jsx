@@ -20,7 +20,7 @@ const Login = () => {
     useEffect(() => {
       if(error){
           alert.error(error);
-          dispatch({type:"CLEAR_ERROR"});
+          dispatch({type:"CLEAR_ERRORS"});
       }
       else if(message){
         alert.success(message);

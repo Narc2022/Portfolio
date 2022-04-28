@@ -4,10 +4,20 @@ import {FaYoutube} from 'react-icons/fa';
 import {AiOutlineProject} from 'react-icons/ai';
 import {MdTimeline} from 'react-icons/md';
 import {Link} from 'react-router-dom';
-import { useState } from 'react';
+import { useDispatch , useSelector} from "react-redux";
+import { logout} from "../../action/user";
+import { updateUser } from '../../action/user';
+import { useState ,useEffect} from 'react';
+import { useAlert } from "react-alert";
 import "./AdminPanel.css"
 
 const AdminPanel = () => {
+  const dispatch = useDispatch();
+  const alert = useAlert();
+
+  const { message:loginMessage } = useSelector((state) => state.login);
+  const { message,error,loading} = useSelector((state) => state.update);
+
   const [name, setName]=useState("");
   const [email, setEmail]=useState("");
   const [password, setPassword]=useState("");
@@ -17,9 +27,11 @@ const AdminPanel = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(updateUser(name,email,password,skills,about));
   };
 
-  const logoutHandler = (e) => {
+  const logoutHandler = () => {
+    dispatch(logout());
   };
 
   const handleAboutImage = (e) => {
@@ -33,7 +45,7 @@ const AdminPanel = () => {
     };
   };
 
-  const handleImages = (e) => {
+  const handleImages = (e,val) => {
     const file =  e.target.files[0];
     const Reader = new FileReader();
     Reader.readAsDataURL(file);
@@ -61,6 +73,17 @@ const AdminPanel = () => {
       }
     };
   };
+
+  useEffect(() => {
+    if(error){
+        alert.error(error);
+        dispatch({type:"CLEAR_ERRORS"});
+    }
+    else if(message){
+      alert.success(message);
+      dispatch({type:"CLEAR_MESSAGE"});
+    }
+  }, [alert,error,message,dispatch])
     return (
     <div className="adminPanel">
         <div className="adminPanelContainer">
@@ -81,56 +104,60 @@ const AdminPanel = () => {
                     <input type="name" 
                     placeholder='Name'
                     onChange={(e)=>setName(e.target.value)}
+                    className="adminPanelInputs"
+                    value={name}
                     />
                     <input type="email" 
                     placeholder='Email' 
                     value={email}
                     onChange={(e)=>setEmail(e.target.value)}
+                    className="adminPanelInputs"
                     />
                     <input type="password" 
                     placeholder='Password' 
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
+                    className="adminPanelInputs"
                     />
                     <div className="adminPanelSkill">
                       <div>
                       <Typography>SKILL 1</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,1)}
                       accept="image/*"
                     />
                     </div>
                     <div>
                     <Typography>SKILL 2</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,2)}
                       accept="image/*"
                     />
                     </div>
                     <div>
                     <Typography>SKILL 3</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,3)}
                       accept="image/*"
                     />
                     </div>
                     <div>
                     <Typography>SKILL 4</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,4)}
                       accept="image/*"
                     />
                     </div>
                     <div>
                     <Typography>SKILL 5</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,5)}
                       accept="image/*"
                     />
                     </div>
                     <div>
                     <Typography>SKILL 6</Typography>
-                      <input type="file" 
+                      <input type="file" className="adminPanelFileUpload" 
                       onChange={(e)=>handleImages(e,6)}
                       accept="image/*"
                     />
@@ -166,7 +193,7 @@ const AdminPanel = () => {
                         onChange={(e) => setAbout({...about, quote:e.target.value})}
                         className="adminPanelInputs"
                         />
-                        <input type="file" 
+                        <input type="file" className="adminPanelFileUpload" 
                          onChange={handleAboutImage}
                          placeholder="Choose Avatar"
                          accept="image/*"
@@ -185,7 +212,7 @@ const AdminPanel = () => {
                     <Button type="submit" variant="contained">
                       Update
                     </Button>
-                </form>
+                </form> 
                 <Button
                   variant="contained"
                   color="error"
