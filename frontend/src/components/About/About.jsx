@@ -1,42 +1,46 @@
-import React from 'react';
+import { Typography } from "@mui/material";
+import React from "react";
 import "./About.css";
-import {Typography} from "@mui/material"
-import ProfileImage from "../../Images/Profilepic.jpeg";
 
-const About = () => {
+const About = ({ about }) => {
   return (
-    <div className='about'>
-        <div className="aboutContainer">
-            <Typography>This is a sample quote</Typography>
-        </div>
-        <div className="aboutContainer2">
-            <div>
-                <img src={ProfileImage} alt="Sachin" className='aboutAvatar' />
-                <Typography variant='h4' style={{
-                    margin:"1vmax 0",
-                    color:"black"
-                }}>Sachin</Typography>
+    <div className="about">
+      <div className="aboutContainer">
+        <Typography>{about.quote}</Typography>
+      </div>
+      <div className="aboutContainer2">
+        <div>
+          <img src={about.avatar.url} alt="Abhi" className="aboutAvatar" />
 
-                <Typography style={{
-                    margin:"1vmax 0"
-                }}>Full Stack Developer</Typography>
-                
-                <Typography
-                style={{
-                    margin:"1vmax 0"}}
-                >I am also a teacher and currier guide</Typography>
-            </div>
-            <div>
-                <Typography style={{
-                    wordSpacing:"5px",
-                    lineHeight:"50px",
-                    letterSpacing:"5px",
-                    textAlign:"right",
-                }}>This is description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque nam esse doloribus nostrum debitis? Impedit error harum ea nam accusamus cumque recusandae enim saepe ad.</Typography>
-            </div>
+          <Typography
+            variant="h4"
+            style={{ margin: "1vmax 0", color: "black" }}
+          >
+            {about.name}
+          </Typography>
+
+          <Typography>{about.title}</Typography>
+
+          <Typography style={{ margin: "1vmax 0", textAlign: "center" }}>
+            {about.subtitle}
+          </Typography>
         </div>
+
+        <div>
+          <Typography
+            style={{
+              wordSpacing: "5px",
+              lineHeight: "50px",
+              letterSpacing: "5px",
+              textAlign: "right",
+            }}
+          >
+            {about.description}
+          </Typography>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

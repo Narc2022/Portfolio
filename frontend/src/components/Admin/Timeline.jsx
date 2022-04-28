@@ -18,7 +18,7 @@ const Timeline = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
-
+  console.log(user.timeline);
   const submitHandler = async (e) => {
     e.preventDefault();
     await dispatch(addTimeline(title, description, date));

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React,{useEffect} from 'react'
 import "./Home.css"
 import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg';
@@ -6,7 +6,7 @@ import venusImage from '../../Images/venus.jpg';
 import spaceImage from '../../Images/space.jpg';
 import {Typography} from "@mui/material";
 import TimeLine from '../TimeLine/TimeLine';
-import cubeFace1 from '../../Images/bootstrap.jpeg'
+
 import {
   SiCplusplus,
   SiReact,
@@ -19,7 +19,9 @@ import {
   SiThreedotjs,
 } from "react-icons/si";
 import YoutubeCard from '../YoutubeCard/YoutubeCard';
-const Home = ({timelines,youtube,projects}) => {
+
+const Home = ({timelines,youtubes,skills}) => {
+  
   useEffect(()=>{
   const textureLoader =  new THREE.TextureLoader();
   const moonTexture = textureLoader.load(moonImage);
@@ -119,41 +121,41 @@ const Home = ({timelines,youtube,projects}) => {
         <div className="homeCubeSkills">
             <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
               <img 
-              src="https://picsum.photos/200/300/?blur=2"
+              src={skills.image1.url}
               alt="Face1"
               />
             </div>
 
             <div className="homeCubeSkillsFaces homeCubeSkillsFace2">
               <img 
-              src="https://picsum.photos/seed/picsum/200/300" 
+              src={skills.image2.url}
               alt="Face2"
               />
             </div>
 
             <div className="homeCubeSkillsFaces homeCubeSkillsFace3">
               <img 
-                src="https://picsum.photos/200/300?random=1" 
-                alt="Face3"
+              src={skills.image3.url}
+              alt="Face3"
               />
             </div>
 
             <div className="homeCubeSkillsFaces homeCubeSkillsFace4">
               <img 
-              src="https://picsum.photos/200/300" 
+              src={skills.image4.url}
               alt="Face4"/>
             </div>
 
             <div className="homeCubeSkillsFaces homeCubeSkillsFace5">
               <img 
-              src="https://picsum.photos/200" 
+              src={skills.image5.url}
               alt="Face5"
               />
             </div>
             
             <div className="homeCubeSkillsFaces homeCubeSkillsFace6">
               <img 
-              src={cubeFace1} 
+              src={skills.image6.url}
               alt="Face6"/>
             </div>
           </div>
@@ -174,21 +176,16 @@ const Home = ({timelines,youtube,projects}) => {
       <div className="homeYoutube">
         <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
         <div className="homeYoutubeWrapper">
-          <YoutubeCard 
-           image="https://picsum.photos/300/200.jpg"
-           title="Sample Video"/>
-           <YoutubeCard 
-           image="https://picsum.photos/300/200.jpg"
-           title="Sample Video"/>
-           <YoutubeCard 
-           image="https://picsum.photos/300/200.jpg"
-           title="Sample Video"/>
-           <YoutubeCard 
-           image="https://picsum.photos/300/200.jpg"
-           title="Sample Video"/>
-           <YoutubeCard 
-           image="https://picsum.photos/300/200.jpg"
-           title="Sample Video"/>
+          { youtubes.map(item=>(
+            <YoutubeCard 
+            image={item.image.url}
+            title={item.title}
+            url ={item.url}
+            id={item._id}
+            key={item._id}
+            />
+          ))
+           }
         </div>
       </div>
     </div>
