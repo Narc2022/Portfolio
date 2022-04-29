@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg';
 import venusImage from '../../Images/venus.jpg';
 import spaceImage from '../../Images/space.jpg';
-import {Typography} from "@mui/material";
+import {Link, Typography} from "@mui/material";
 import TimeLine from '../TimeLine/TimeLine';
 
 import {
@@ -107,17 +107,48 @@ const Home = ({timelines,youtubes,skills}) => {
     }
 
     animate();
+
+    return window.addEventListener("scroll",()=>{
+      camera.rotation.z=window.scrollY * 0.003;
+      camera.rotation.y=window.scrollY * 0.003;
+
+      const skillsBox = document.getElementById("homeskillsBox");
+
+      if(window.scrollY > 1500 ){
+        skillsBox.style.animationName = "homeskillsBoxAnimationOn"
+      }else{
+        skillsBox.style.animationName = "homeskillsBoxAnimationOff"
+      }
+    });
   },[])
   return (
     <div className='home'>
       <canvas className="homeCanvas"></canvas>
+      <div className="homeCanvasContainer">
+        <Typography variant="h1">
+          <p>S</p>
+          <p>A</p>
+          <p>C</p>
+          <p>H</p>
+          <p>I</p>
+          <p>N</p>
+        </Typography>
+
+        <div className="homeCanvasBox">
+          <Typography variant="h2">DESIGNER</Typography>
+          <Typography variant="h2">DEVELOPER</Typography>
+          <Typography variant="h2">TEACHER</Typography>
+          <Typography variant="h2">CONTENT CREATOR</Typography>
+        </div>
+        <Link to="/projects">VIEW WORK</Link>
+      </div>
       <div className="homeContainer">
         <Typography variant='h3'>TIMELINE</Typography>
         <TimeLine timelines={timelines} />
       </div>
       <div className="homeSkills">
         <Typography variant="h3">SKILLS</Typography>
-
+           
         <div className="homeCubeSkills">
             <div className="homeCubeSkillsFaces homeCubeSkillsFace1">
               <img 
@@ -161,7 +192,7 @@ const Home = ({timelines,youtubes,skills}) => {
           </div>
           <div className="cubeShadow">
           </div>
-          <div className="homeskillsBox">
+          <div className="homeskillsBox" id='homeskillsBox'>
             <SiCplusplus />
             <SiReact />
             <SiJavascript />
