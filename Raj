@@ -1,0 +1,31 @@
+.navigate-page {
+    width: 100%;
+    height: 500px;
+    -webkit-transform: rotateY(33deg);
+    -ms-transform: rotateY(33deg);
+    transform: rotateY(33deg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: 0 0;
+    -ms-animation: animatedBackground 400s linear infinite;
+    -moz-animation: animatedBackground 400s linear infinite;
+    -webkit-animation: animatedBackground 400s linear infinite;
+    animation: animatedBackground 400s linear infinite;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+}
+.navigate-page:hover{
+   animation-play-state:paused; 
+}
+
+
+@keyframes animatedBackground{
+0%{
+     background-position:0 0;
+}
+100%{
+     background-position:0 1000%;
+}
+}
+<div class="span6">
+          <div class="navigate-page" style="background-image: url({{ module.portfolio_image.src }});">         
+        </div>
