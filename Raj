@@ -131,3 +131,44 @@
 </body>
 
 </html>
+
+
+/*****************************************************/
+
+$(function () {
+
+    $('#draggable').draggable({
+        helper: 'clone'
+    });
+
+    $('#droppable1, #droppable2').droppable({
+        drop: function (event, ui) {
+            $(this)
+                .append(ui.helper.clone(false).css({
+                position: 'relative',
+                left: '0px',
+                top: '0px'
+            }));
+        }
+    });
+
+});
+.well {
+    width: 150px;
+    height: 150px;
+    border: 3px solid red;
+}
+.ii{
+  float:left;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 3px solid blue;
+  }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.9.1/jquery-ui.min.js"></script>
+
+<div class="well">
+    <div id="draggable">CONTENT</div>
+</div>
+<div id="droppable1" class="ii well col-md-3" style="z-index:-1;"></div>
+<div id="droppable2" class="ii well col-md-9" style="z-index:-1;"></div>
