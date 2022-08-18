@@ -1,31 +1,133 @@
-.navigate-page {
-    width: 100%;
-    height: 500px;
-    -webkit-transform: rotateY(33deg);
-    -ms-transform: rotateY(33deg);
-    transform: rotateY(33deg);
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: 0 0;
-    -ms-animation: animatedBackground 400s linear infinite;
-    -moz-animation: animatedBackground 400s linear infinite;
-    -webkit-animation: animatedBackground 400s linear infinite;
-    animation: animatedBackground 400s linear infinite;
-    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
-}
-.navigate-page:hover{
-   animation-play-state:paused; 
-}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
 
-@keyframes animatedBackground{
-0%{
-     background-position:0 0;
-}
-100%{
-     background-position:0 1000%;
-}
-}
-<div class="span6">
-          <div class="navigate-page" style="background-image: url({{ module.portfolio_image.src }});">         
+        .main {
+            width: 100%;
+            height: 700px;
+            background-color: #ff9933;
+            display: flex;
+        }
+
+        .drag {
+            width: 50%;
+            background-color: aqua;
+        }
+
+        .drop {
+            width: 50%;
+            background-color: #ff9933;
+        }
+
+        .com_drag {
+            width: 50px;
+            height: 50px;
+            background-color: aliceblue;
+        }
+
+        .drop {
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .com_drop {
+            width: 100px;
+            height: 100px;
+            background-color: #ff8000;
+            margin: 50px 0px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+            var outputArr1 = [];
+            var outputArr2 = [];
+            var outputArr3 = [];
+            var lastdropped;
+            var lastdropped2;
+            var lastdropped3;
+            function outputdata(data1) {
+                    $("#value1").val(outputArr1);
+            }
+            function outputdata2(data2) {
+                    $("#value2").val(outputArr2);
+            }
+            function outputdata3(data3) {
+                    $("#value3").val(outputArr3);
+            }
+            
+
+        $(function () {
+            $('#drag1').draggable();
+            $('#drag2').draggable();
+            $('#drag3').draggable();
+            $('#drag4').draggable();
+            $("#drop1").droppable({
+                drop: function (event, ui) {
+                    var el = $(ui.draggable).attr("data-precode");
+                    // console.log(el);
+                    lastdropped = el;
+                    outputArr1.push(lastdropped); 
+                    // console.log(outputArr1);
+                    outputdata(outputArr1);
+                }
+            });
+            $("#drop2").droppable({
+                drop: function (event, ui) {
+                    var el2 = $(ui.draggable).attr("data-precode");
+                    lastdropped2 = el2;
+                    console.log(lastdropped2);  
+                    outputArr2.push(lastdropped2);
+                    outputdata2(outputArr2); 
+                }
+            });
+            $("#drop3").droppable({
+                drop: function (event, ui) {
+                    var el3 = $(ui.draggable).attr("data-precode");
+                    lastdropped3 = el3;
+                    console.log(lastdropped3);  
+                    outputArr3.push(lastdropped3);
+                    outputdata3(outputArr3);  
+                }
+            });
+        });     
+    </script>
+</head>
+<body>
+    <div class="main-container">
+        <div class="main">
+            <div class="drag">
+                <div class="com_drag" id="drag1" value="1" data-precode="1"></div>
+                <div class="com_drag" id="drag2" value="2" data-precode="2"></div>
+                <div class="com_drag" id="drag3" value="3" data-precode="3"></div>
+                <div class="com_drag" id="drag4" value="4" data-precode="4"></div>
+            </div>
+            <div class="drop">
+                <div class="com_drop" id="drop1"></div>
+                <div class="com_drop" id="drop2"></div>
+                <div class="com_drop" id="drop3"></div>
+            </div>
         </div>
+        <div class="backpunch" style="width: 100px;display: flex;">
+            <input type="text" name="" id="value1" value="">
+            <input type="text" name="" id="value2">
+            <input type="text" name="" id="value3">
+        </div>
+    </div>
+</body>
+
+</html>
