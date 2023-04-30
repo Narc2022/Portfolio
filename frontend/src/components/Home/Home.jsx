@@ -207,7 +207,7 @@ const Home = ({timelines,youtubes,skills}) => {
       <div className="homeYoutube">
         <Typography variant='h3'>YOUTUBE VIDEOS</Typography>
         <div className="homeYoutubeWrapper">
-          { youtubes.map(item=>(
+          {youtubes&& youtubes.map(item=>(
             <YoutubeCard 
             image={item.image.url}
             title={item.title}

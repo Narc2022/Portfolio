@@ -36,7 +36,7 @@ export const loginReducer = createReducer(
     LOGIN_FAILURE: (state, action) => {
       state.loading = false;
       state.isAuthenticated = false;
-      state.error = action.payload;
+      state.message = action.payload;
     },
 
     LOAD_USER_REQUEST: (state) => {
