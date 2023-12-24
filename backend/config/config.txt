@@ -1,10 +1,9 @@
 PORT = 4000
 
-MONGO_URI="mongodb+srv://narc2022:narc2022@cluster0.uvulp.mongodb.net/myPortfolioDatabase"
-#"mongodb+srv://narc2022:narc2022@cluster0.yxrkwck.mongodb.net/myPortfolioDatabase"
+MONGO_URI="mongodb+srv://narc2022:narc2022@cluster0.yxrkwck.mongodb.net/myPortfolioDatabase"
 
 
-# MONGO_URI="mongodb+srv://narc2022:narc2022@cluster0.yxrkwck.mongodb.net/test"
+MONGO_URI2="mongodb+srv://narc2022:narc2022@cluster0.yxrkwck.mongodb.net/test"
 
 JWT_SECRET ="JHKDGHDGJHFGBJHGVBCHGJSAVHGCV"
 SMTP_HOST = "smtp.mailtrap.io"
