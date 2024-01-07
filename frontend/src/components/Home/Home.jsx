@@ -4,11 +4,10 @@ import * as THREE from 'three'
 import moonImage from '../../Images/moon.jpg';
 import venusImage from '../../Images/venus.jpg';
 import spaceImage from '../../Images/space.jpg';
-import {Link, Typography} from "@mui/material";
+import { Typography} from "@mui/material";
 import TimeLine from '../TimeLine/TimeLine';
 
 import {
-  SiCplusplus,
   SiReact,
   SiJavascript,
   SiMongodb,
