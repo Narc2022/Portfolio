@@ -267,6 +267,10 @@
     top: unset;
   }
 
+  .homeSkills{
+    height: 1000px;
+  }
+
   .homeCanvasBox > h2 {
     font: 900 2rem "Ubuntu Mono", "Roboto";
     letter-spacing: 15px;
