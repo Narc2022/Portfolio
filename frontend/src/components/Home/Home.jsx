@@ -192,7 +192,6 @@ const Home = ({timelines,youtubes,skills}) => {
           <div className="cubeShadow">
           </div>
           <div className="homeskillsBox" id='homeskillsBox'>
-            <SiCplusplus />
             <SiReact />
             <SiJavascript />
             <SiMongodb />
