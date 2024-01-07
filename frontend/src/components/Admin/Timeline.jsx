@@ -99,12 +99,12 @@ const Timeline = () => {
             user.timeline &&
             user.timeline.map((item) => (
               <div className="youtubeCard" key={item._id}>
-                <Typography variant="h6">{item.title}</Typography>
+                <Typography variant="h6">{item.title && item.title}</Typography>
                 <Typography variant="body1" style={{ letterSpacing: "2px" }}>
-                  {item.description}
+                  {item.description && item.description}
                 </Typography>
                 <Typography variant="body1" style={{ fontWeight: 600 }}>
-                  {item.date.toString().split("T")[0]}
+                  {item.date && item.date.toString().split("T")[0]}
                 </Typography>
 
                 <Button

@@ -140,7 +140,8 @@ const Home = ({timelines,youtubes,skills}) => {
           <Typography variant="h2">TEACHER</Typography>
           <Typography variant="h2">CONTENT CREATOR</Typography>
         </div>
-        <Link to="/projects">VIEW WORK</Link>
+        <a href="/projects">VIEW WORK</a>
+
       </div>
       <div className="homeContainer">
         <Typography variant='h3'>TIMELINE</Typography>
