@@ -135,10 +135,8 @@ const Home = ({timelines,youtubes,skills}) => {
         </Typography>
 
         <div className="homeCanvasBox">
-          <Typography variant="h2">DESIGNER</Typography>
-          <Typography variant="h2">DEVELOPER</Typography>
-          <Typography variant="h2">TEACHER</Typography>
-          <Typography variant="h2">CONTENT CREATOR</Typography>
+          <Typography variant="h2">SOFTWARE <br/> DEVELOPER <br/>(UI/UX)</Typography>
+          <Typography variant="h2">& Mentor</Typography>
         </div>
         <a href="/projects">VIEW WORK</a>
 
