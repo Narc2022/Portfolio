@@ -9,9 +9,8 @@ const Footer = () => {
       <div>
         <Typography variant="h5">About Me</Typography>
         <Typography>
-          Hey, I'm Sachin Singh, a passionate <b>Software Developer</b> with
-          over 3 years of experience specializing in{" "}
-          <b>Front End Development</b>.
+          Hey, I'm Sachin Singh, a passionate <b>Software Developer</b>{" "}
+          specializing in <b>Front End Development</b>.
         </Typography>
 
         <Link to="/contact" className="footerContactBtn">
